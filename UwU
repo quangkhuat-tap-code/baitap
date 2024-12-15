@@ -1,0 +1,18 @@
+possible_moves(board):
+Hàm này tạo danh sách các tọa độ có thể đi, dựa trên danh giới các nơi đã đánh, để tìm các nước đi khả dĩ.
+score_of_col_one(board, col, y, x):
+Hàm này tính điểm số của một quân cờ tại vị trí (y, x) theo 4 hướng khác nhau. Nó sử dụng các hàm phụ như march và score_of_row để tính điểm.
+TF34score(score3, score4):
+Kiểm tra xem có chắc chắn có thể thắng không, thông qua việc xem xét điểm số của các bộ 3 và 4 liên tiếp.
+stupid_score(board, col, anticol, y, x):
+Hàm này tính điểm số tượng trưng cho lợi thế của mỗi nước đi, bao gồm cả điểm tấn công và phòng thủ.
+Nó sử dụng score_of_col_one để lấy điểm số và winning_situation để đánh giá tình huống chiến thắng.
+winning_situation(sumcol):
+Hàm này xác định xem có tình huống chiến thắng hay không bằng cách kiểm tra các điểm số trong sumcol.
+best_move(board, col):
+Dựa trên các điểm số tính được từ hàm stupid_score, hàm này chọn nước đi tốt nhất cho AI.
+Nếu bảng cờ rỗng, nó chọn vị trí ngẫu nhiên. Nếu không, nó duyệt qua các nước đi có thể và chọn nước đi có điểm số cao nhất.
+Cách hoạt động:
+Đầu tiên, possible_moves(board) tạo ra các nước đi có thể.
+Tiếp theo, stupid_score(board, col, anticol, y, x) tính điểm số cho mỗi nước đi dựa trên các tiêu chí tấn công và phòng thủ.
+Cuối cùng, best_move(board, col) chọn nước đi tốt nhất từ các nước đi có điểm số cao nhất.
